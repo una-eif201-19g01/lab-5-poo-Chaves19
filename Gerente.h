@@ -21,13 +21,13 @@ public:
     Gerente();
     Gerente(float);
     ~Gerente();
-    float Trabajador::calcularSalarioBase();
-    float Trabajador::calcularHorasExtra();
-    float Trabajador::calcularAnualidades();
-    float Trabajador::calcularSalariobruto();
-    float Trabajador::calcularCargas();
-    float Trabajador::calcularSalarioNeto();
-    std::string Trabajador::toString();
+    float calcularSalarioBase();
+    float calcularHorasExtra();
+    float calcularAnualidades();
+    float calcularSalariobruto();
+    float calcularCargas();
+    float calcularSalarioNeto();
+    std::string toString();
     void SetBono(float bono);
     float GetBono();
 

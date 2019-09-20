@@ -20,32 +20,32 @@ Vendedor::Vendedor(float comision, int ventas) : comision(comision), ventas(vent
 Vendedor::~Vendedor() {
 }
 
-float Trabajador::calcularSalarioBase() {
-    return precioHora * 48;
+float Vendedor::calcularSalarioBase() {
+    return Trabajador::getPrecioHora() * 48;
 }
 
-float Trabajador::calcularHorasExtra() {
-    int contador = horasLab * 0.05;
-    return horasLab + contador;
+float Vendedor::calcularHorasExtra() {
+   int contador = Trabajador::getHorasLab() * 0.05;
+    return Trabajador::getHorasLab() + contador;
 }
 
-float Trabajador::calcularAnualidades() {
-    return (calcularSalarioBase() *(0.05 * annosLaborados));
+float Vendedor::calcularAnualidades() {
+    return (calcularSalarioBase() *(0.05 * Trabajador::getAnnosLaborados()));
 }
 
-float Trabajador::calcularSalariobruto() {
-    return calcularSalarioBase() + calcularAnualidades() + ( precioHora * calcularHorasExtra() );
+float Vendedor::calcularSalariobruto() {
+    return calcularSalarioBase() + calcularAnualidades() + (Trabajador::getPrecioHora() * calcularHorasExtra());
 }
 
-float Trabajador::calcularCargas() {
+float Vendedor::calcularCargas() {
     return calcularSalariobruto() - (calcularSalariobruto() * 0.09);
 }
 
-float Trabajador::calcularSalarioNeto() {
+float Vendedor::calcularSalarioNeto() {
     return calcularSalariobruto() - calcularCargas();
 }
 
-std::string toString(){
+std::string Vendedor::toString(){
     
 }
 

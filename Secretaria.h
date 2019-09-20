@@ -15,18 +15,17 @@
 #define SECRETARIA_H
 
 class Secretaria : public Trabajador {
-private:
 public:
     Secretaria();
     Secretaria(Trabajador &trabajador);
     ~Secretaria();
-    float Trabajador::calcularSalarioBase();
-    float Trabajador::calcularHorasExtra();
-    float Trabajador::calcularAnualidades();
-    float Trabajador::calcularSalariobruto();
-    float Trabajador::calcularCargas();
-    float Trabajador::calcularSalarioNeto();
-    std::string Trabajador::toString();
+    float calcularSalarioBase();
+    float calcularHorasExtra();
+    float calcularAnualidades();
+    float calcularSalariobruto();
+    float calcularCargas();
+    float calcularSalarioNeto();
+    std::string toString();
 
 };
 

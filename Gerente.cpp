@@ -13,49 +13,49 @@
 
 #include "Gerente.h"
 
-Gerente::Gerente(): bono(0.0) {
+Gerente::Gerente() : bono(0.0) {
 }
 
-Gerente::Gerente(float bono): bono(bono) {
+Gerente::Gerente(float bono) : bono(bono) {
 }
 
 Gerente::~Gerente() {
 }
 
-virtual float Trabajador::calcularSalarioBase() {
-    return precioHora * 48;
+float Gerente::calcularSalarioBase() {
+    return Trabajador::getPrecioHora() * 48;
 }
 
-virtual float Trabajador::calcularHorasExtra() {
-    int contador = horasLab * 0.05;
-    return horasLab + contador;
+float Gerente::calcularHorasExtra() {
+    int contador = Trabajador::getHorasLab() * 0.05;
+    return Trabajador::getHorasLab() + contador;
 }
 
-virtual float Trabajador::calcularAnualidades() {
-    return (calcularSalarioBase() *(0.05 * annosLaborados));
+float Gerente::calcularAnualidades() {
+    return (calcularSalarioBase() *(0.05 * Trabajador::getAnnosLaborados()));
 }
 
-virtual float Trabajador::calcularSalariobruto() {
-    return calcularSalarioBase() + calcularAnualidades() + ( precioHora * calcularHorasExtra() );
+float Gerente::calcularSalariobruto() {
+    return calcularSalarioBase() + calcularAnualidades() + (Trabajador::getPrecioHora() * calcularHorasExtra());
 }
 
-virtual float Trabajador::calcularCargas() {
+float Gerente::calcularCargas() {
     return calcularSalariobruto() - (calcularSalariobruto() * 0.09);
 }
 
-virtual float Trabajador::calcularSalarioNeto() {
+float Gerente::calcularSalarioNeto() {
     return calcularSalariobruto() - calcularCargas();
 }
 
-virtual std::string toString(){
-    
+virtual std::string Gerente::toString() {
+
 }
 
 void Gerente::SetBono(float bono) {
     this->bono = bono;
 }
 
-float Gerente::GetBono(){
+float Gerente::GetBono() {
     return bono;
 }
 
