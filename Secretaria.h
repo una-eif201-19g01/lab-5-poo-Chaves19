@@ -17,7 +17,7 @@
 class Secretaria : public Trabajador {
 public:
     Secretaria();
-    Secretaria(Trabajador &trabajador);
+    Secretaria(std::string, int, float, int);
     ~Secretaria();
     float calcularSalarioBase();
     float calcularHorasExtra();

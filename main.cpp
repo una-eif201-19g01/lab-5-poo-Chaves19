@@ -1,26 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+#include "Secretaria.h"
+#include "Gerente.h" 
+#include "Vendedor.h"
+#include "Trabajador.h"
+#include<iostream>
+using std::cout;
 
-/* 
- * File:   main.cpp
- * Author: ESCINF
- *
- * Created on 28 de junio de 2019, 15:11
- */
-
-#include <cstdlib>
-#include <iostream>
-
-using namespace std;
-
-/*
- * 
- */
-int main(int argc, char** argv) {
-    cout<<"HELLO WORLD!!!";
-    return 0;
+int main() {
+Trabajador* arreglo[3];
+Secretaria sec1("001",60,1436.50,5);
+Vendedor vend1("002",62,1248.32,2,0.15,12);
+Gerente ger1("003",48,1892.68,4,25000);
+arreglo[0]= &sec1;
+arreglo[1]= &vend1;
+arreglo[2]= &ger1;
+for(int cont=0;cont<3;cont++){
+arreglo[cont]->reporte();
 }
+	
+	
+
+};
 

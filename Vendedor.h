@@ -20,7 +20,7 @@ private:
     int ventas;
 public:
     Vendedor();
-    Vendedor(float, int);
+    Vendedor(std::string, int, float, int, float, int);
     ~Vendedor();
     float calcularSalarioBase();
     float calcularHorasExtra();

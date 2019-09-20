@@ -19,7 +19,7 @@ private:
     float bono;
 public:
     Gerente();
-    Gerente(float);
+    Gerente(std::string, int, float, int, float);
     ~Gerente();
     float calcularSalarioBase();
     float calcularHorasExtra();

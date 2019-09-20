@@ -17,8 +17,8 @@
 Secretaria::Secretaria() {
 }
 
-Secretaria::Secretaria() {
-}
+Secretaria::Secretaria( std::string id, int horasLab, float precioHora, int annosLaborados):
+Trabajador(id, horasLab, precioHora, annosLaborados) {}
 
 Secretaria::~Secretaria() {
 }

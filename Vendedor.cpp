@@ -15,7 +15,8 @@
 
 Vendedor::Vendedor() : comision(0.0), ventas(0) {}
 
-Vendedor::Vendedor(float comision, int ventas) : comision(comision), ventas(ventas) {}
+Vendedor::Vendedor( std::string id, int horasLab, float precioHora, int annosLaborados, float comision, int ventas) :
+Trabajador(id, horasLab, precioHora, annosLaborados), comision(comision), ventas(ventas) {}
 
 Vendedor::~Vendedor() {
 }

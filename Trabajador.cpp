@@ -28,12 +28,12 @@ virtual float Trabajador::calcularSalarioBase() {
 }
 
 virtual float Trabajador::calcularHorasExtra() {
-    int contador = horasLab * 0.05;
+    int contador = horasLab * 0.5;
     return horasLab + contador;
 }
 
 virtual float Trabajador::calcularAnualidades() {
-    return (calcularSalarioBase() *(0.05 * annosLaborados));
+    return (calcularSalarioBase() * (0.05 * annosLaborados));
 }
 
 virtual float Trabajador::calcularSalariobruto() {
