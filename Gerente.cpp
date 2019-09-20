@@ -16,7 +16,7 @@
 Gerente::Gerente() : bono(0.0) {
 }
 
-Gerente::Gerente( std::string id, int horasLab, float precioHora, int annosLaborados, float bono) :
+Gerente::Gerente(std::string id, int horasLab, float precioHora, int annosLaborados, float bono) :
 Trabajador(id, horasLab, precioHora, annosLaborados), bono(bono) {
 }
 
@@ -37,7 +37,7 @@ float Gerente::calcularAnualidades() {
 }
 
 float Gerente::calcularSalariobruto() {
-    return (calcularSalarioBase() + calcularAnualidades() + (Trabajador::getPrecioHora() * calcularHorasExtra())) + bono;
+    return (calcularSalarioBase() + calcularAnualidades() + (Trabajador::getPrecioHora() * calcularHorasExtra())) +bono;
 }
 
 float Gerente::calcularCargas() {
@@ -49,14 +49,17 @@ float Gerente::calcularSalarioNeto() {
 }
 
 virtual std::string Gerente::toString() {
+    std::string reporte = Trabajador::toString();
+    reporte = reporte + "\n" + "Bono: " + std::to_string(getBono()) + "\n";
+    return reporte;
 
 }
 
-void Gerente::SetBono(float bono) {
+void Gerente::setBono(float bono) {
     this->bono = bono;
 }
 
-float Gerente::GetBono() {
+float Gerente::getBono() {
     return bono;
 }
 

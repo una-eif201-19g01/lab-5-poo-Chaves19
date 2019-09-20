@@ -28,8 +28,8 @@ public:
     float calcularCargas();
     float calcularSalarioNeto();
     std::string toString();
-    void SetBono(float bono);
-    float GetBono();
+    void setBono(float bono);
+    float getBono();
 
 };
 

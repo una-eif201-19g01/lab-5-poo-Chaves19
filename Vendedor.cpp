@@ -13,10 +13,12 @@
 
 #include "Vendedor.h"
 
-Vendedor::Vendedor() : comision(0.0), ventas(0) {}
+Vendedor::Vendedor() : comision(0.0), ventas(0) {
+}
 
-Vendedor::Vendedor( std::string id, int horasLab, float precioHora, int annosLaborados, float comision, int ventas) :
-Trabajador(id, horasLab, precioHora, annosLaborados), comision(comision), ventas(ventas) {}
+Vendedor::Vendedor(std::string id, int horasLab, float precioHora, int annosLaborados, float comision, int ventas) :
+Trabajador(id, horasLab, precioHora, annosLaborados), comision(comision), ventas(ventas) {
+}
 
 Vendedor::~Vendedor() {
 }
@@ -26,7 +28,7 @@ float Vendedor::calcularSalarioBase() {
 }
 
 float Vendedor::calcularHorasExtra() {
-   int contador = Trabajador::getHorasLab() * 0.05;
+    int contador = Trabajador::getHorasLab() * 0.05;
     return Trabajador::getHorasLab() + contador;
 }
 
@@ -46,23 +48,27 @@ float Vendedor::calcularSalarioNeto() {
     return calcularSalariobruto() - calcularCargas();
 }
 
-std::string Vendedor::toString(){
-    
+std::string Vendedor::toString() {
+    std::string reporte = Trabajador::toString();
+    reporte = reporte + "\n" +
+            "Comision: " + std::to_string(getComision()) + "\n" +
+            "Ventas: " + std::to_string(getVentas()) + "\n";
+    return reporte;
 }
 
-void Vendedor::SetVentas(int ventas) {
+void Vendedor::setVentas(int ventas) {
     this->ventas = ventas;
 }
 
-int Vendedor::GetVentas() {
+int Vendedor::getVentas() {
     return ventas;
 }
 
-void Vendedor::SetComision(float comision) {
+void Vendedor::setComision(float comision) {
     this->comision = comision;
 }
 
-float Vendedor::GetComision() {
+float Vendedor::getComision() {
     return comision;
 }
 

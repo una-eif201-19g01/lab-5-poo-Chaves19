@@ -29,10 +29,10 @@ public:
     float calcularCargas();
     float calcularSalarioNeto();
     std::string toString();
-    void SetVentas(int ventas);
-    int GetVentas();
-    void SetComision(float comision);
-    float GetComision();
+    void setVentas(int ventas);
+    int getVentas();
+    void setComision(float comision);
+    float getComision();
 
 };
 

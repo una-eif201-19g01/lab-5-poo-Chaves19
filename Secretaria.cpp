@@ -49,5 +49,6 @@ float Secretaria::calcularSalarioNeto() {
 }
 
 std::string Secretaria::toString() {
-
+    std::string reporte = Trabajador::toString();
+    return reporte; 
 }

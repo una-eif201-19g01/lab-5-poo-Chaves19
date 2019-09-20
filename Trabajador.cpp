@@ -37,7 +37,7 @@ virtual float Trabajador::calcularAnualidades() {
 }
 
 virtual float Trabajador::calcularSalariobruto() {
-    return calcularSalarioBase() + calcularAnualidades() + ( precioHora * calcularHorasExtra() );
+    return calcularSalarioBase() + calcularAnualidades() + (precioHora * calcularHorasExtra());
 }
 
 virtual float Trabajador::calcularCargas() {
@@ -48,8 +48,14 @@ virtual float Trabajador::calcularSalarioNeto() {
     return calcularSalariobruto() - calcularCargas();
 }
 
-virtual std::string toString(){
-    
+virtual std::string Trabajador::toString() {
+    std::string reporte = "";
+    reporte = reporte + "Los datos del trabajador son: \n" + "Identificacion: " + id + "\n" +
+            "Horas laboradas: " + std::to_string(getHorasLab()) + "\n" +
+            "PrecioPorHora: " + std::to_string(getPrecioHora()) + "\n" +
+            "Annos Laborados: " std::to_string(getAnnosLaborados());
+    return reporte;
+
 }
 
 void Trabajador::setAnnosLaborados(int annosLaborados) {
