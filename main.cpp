@@ -1,3 +1,7 @@
+//
+// Created by Alonso Chaves  on 2019-09-20.
+//
+
 #include "Secretaria.h"
 #include "Gerente.h" 
 #include "Vendedor.h"

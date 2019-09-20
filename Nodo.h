@@ -1,5 +1,5 @@
 //
-// Created by Maikol Guzman  on 2019-09-16.
+// Created by Alonso Chaves  on 2019-09-20.
 //
 
 #ifndef LAB_6_LISTAS_ENLAZADAS_NODO_H

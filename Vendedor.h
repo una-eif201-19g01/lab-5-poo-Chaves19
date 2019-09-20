@@ -1,15 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Vendedor.h
- * Author: ESCINF
- *
- * Created on 13 de septiembre de 2019, 8:26
- */
+//
+// Created by Alonso Chaves  on 2019-09-20.
+//
 
 #ifndef VENDEDOR_H
 #define VENDEDOR_H
