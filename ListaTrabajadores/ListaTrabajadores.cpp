@@ -1,24 +1,96 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//
+// Created by Maikol Guzman  on 2019-09-16.
+//
 
-/* 
- * File:   ListaTrabajadores.cpp
- * Author: ESCINF
- * 
- * Created on 20 de septiembre de 2019, 8:28
- */
-
+#include <sstream>
 #include "ListaTrabajadores.h"
 
 ListaTrabajadores::ListaTrabajadores() {
-}
-
-ListaTrabajadores::ListaTrabajadores(const ListaTrabajadores& orig) {
+    primero = nullptr;
+    actual = nullptr;
 }
 
 ListaTrabajadores::~ListaTrabajadores() {
+    while (primero != nullptr) {
+        actual = primero;
+        primero = primero->getSiguiente();
+        delete(actual);
+    }
 }
 
+void ListaTrabajadores::insertarInicio(const Trabajador& _trabajador) {
+    actual = new Nodo (_trabajador, nullptr);
+    if (primero == nullptr) {
+        primero = actual;
+    } else {
+        actual->setSiguiente(primero);
+        primero = actual;
+    }
+}
+
+void ListaTrabajadores::insertarFinal(const Trabajador& _trabajador) {
+    actual = primero;
+    if (primero == nullptr) {
+        primero = new Nodo(_trabajador, nullptr);
+    } else {
+        while (actual->getSiguiente() != nullptr) {
+            actual = actual->getSiguiente();
+        }
+        actual->setSiguiente(new Nodo(_trabajador, nullptr));
+    }
+}
+
+bool ListaTrabajadores::eliminarInicio() {
+    if (primero == nullptr) {
+        return false;
+    } else {
+        actual = primero;
+        primero = primero->getSiguiente();
+        delete actual;
+        return true;
+    }
+}
+
+int ListaTrabajadores::totalNodos() {
+    int totalNodos = 0;
+    actual = primero;
+
+    while (actual != nullptr) {
+        totalNodos ++;
+        actual = actual->getSiguiente();
+    }
+
+    return totalNodos;
+}
+
+bool ListaTrabajadores::listaVacia() {
+    return primero == nullptr;
+}
+
+std::string ListaTrabajadores::toString() {
+    std::string resultado;
+    actual = primero;
+
+    while (actual != nullptr) {
+        resultado += actual->toString();
+        actual = actual->getSiguiente();
+    }
+
+    return resultado;
+}
+
+Nodo *ListaTrabajadores::getPrimero() const {
+    return primero;
+}
+
+void ListaTrabajadores::setPrimero(Nodo *primero) {
+    ListaTrabajadores::primero = primero;
+}
+
+Nodo *ListaTrabajadores::getActual() const {
+    return actual;
+}
+
+void ListaTrabajadores::setActual(Nodo *actual) {
+    ListaTrabajadores::actual = actual;
+}

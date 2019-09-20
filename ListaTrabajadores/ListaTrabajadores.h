@@ -1,27 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//
+// Created by Maikol Guzman  on 2019-09-16.
+//
 
-/* 
- * File:   ListaTrabajadores.h
- * Author: ESCINF
- *
- * Created on 20 de septiembre de 2019, 8:28
- */
+#ifndef LISTATRABAJADORES_
+#define LISTATRABAJADORES_
 
-#ifndef LISTATRABAJADORES_H
-#define LISTATRABAJADORES_H
+
+#include <ostream>
+#include "Nodo.h"
 
 class ListaTrabajadores {
+    Nodo *primero;
+    Nodo *actual;
+
 public:
     ListaTrabajadores();
-    ListaTrabajadores(const ListaTrabajadores& orig);
-    virtual ~ListaTrabajadores();
-private:
 
+    virtual ~ListaTrabajadores();
+
+    void insertarInicio(const Trabajador& _trabajador);
+    void insertarFinal(const Trabajador& _trabajador);
+    bool eliminarInicio();
+    int totalNodos();
+    bool listaVacia();
+
+    Nodo *getPrimero() const;
+
+    void setPrimero(Nodo *primero);
+
+    Nodo *getActual() const;
+
+    void setActual(Nodo *actual);
+
+    std::string toString();
 };
 
-#endif /* LISTATRABAJADORES_H */
 
+#endif //LISTATRABAJADORES_
