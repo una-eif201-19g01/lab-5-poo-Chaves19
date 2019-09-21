@@ -8,6 +8,7 @@
 #include<iostream>
 using std::cout;
 using std::cin;
+
 int main() {
     Trabajador * vector[3];
     Secretaria sec1("001", 50, 1436.50, 3);
