@@ -20,6 +20,8 @@ int main() {
     for (int cont = 0; cont < 3; cont++) {
         cout << vector[cont]->toString();
     }
+    
+    
     cin.get();
 
 
