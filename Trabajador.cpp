@@ -44,7 +44,7 @@ std::string Trabajador::toString() {
     reporte = reporte + "Los datos del trabajador son: \n" + "Identificacion: " + id + "\n" +
             "Horas laboradas: " + std::to_string(getHorasLab()) + "\n" +
             "PrecioPorHora: " + std::to_string(getPrecioHora()) + "\n" +
-            "Annos Laborados: " + std::to_string(getAnnosLaborados());
+            "Annos Laborados: " + std::to_string(getAnnosLaborados()) + "\n";
     return reporte;
 
 }
