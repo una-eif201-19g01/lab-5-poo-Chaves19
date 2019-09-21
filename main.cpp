@@ -10,9 +10,9 @@ using std::cout;
 
 int main() {
     Trabajador * vector[3];
-    Secretaria sec1("001", 60, 1436.50, 5);
-    Vendedor vend1("002", 62, 1248.32, 2, 0.15, 12);
-    Gerente ger1("003", 48, 1892.68, 4, 25000);
+    Secretaria sec1("001", 50, 1436.50, 3);
+    Vendedor vend1("002", 70, 1248.32, 4, 0.15, 12);
+    Gerente ger1("003", 36, 1892.68, 5, 25000);
     vector[0] = &sec1;
     vector[1] = &vend1;
     vector[2] = &ger1;
