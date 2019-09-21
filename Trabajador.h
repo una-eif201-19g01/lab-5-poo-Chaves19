@@ -4,6 +4,7 @@
 
 #ifndef TRABAJADOR_H
 #define TRABAJADOR_H
+#include <string>
 
 class Trabajador {
 private:

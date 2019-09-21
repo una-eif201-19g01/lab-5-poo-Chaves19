@@ -17,7 +17,7 @@ const Trabajador &Nodo::getTrabajador() const {
 }
 
 void Nodo::setTrabajador(const Trabajador &trabajador) {
-   trabajador = trabajador;
+   this->trabajador = trabajador;
 }
 
 Nodo *Nodo::getSiguiente() const {
@@ -29,5 +29,5 @@ void Nodo::setSiguiente(Nodo *_siguiente) {
 }
 
 std::string Nodo::toString() {
-    return trabajador->toString();
+    return trabajador.toString();
 }

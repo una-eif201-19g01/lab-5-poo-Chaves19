@@ -39,7 +39,7 @@ float Gerente::calcularSalarioNeto() {
     return calcularSalariobruto() - calcularCargas();
 }
 
-virtual std::string Gerente::toString() {
+std::string Gerente::toString() {
     std::string reporte = Trabajador::toString();
     reporte = reporte + "\n" + "Bono: " + std::to_string(getBono()) + "\n";
     return reporte;

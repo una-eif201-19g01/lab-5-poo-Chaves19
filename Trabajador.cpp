@@ -14,37 +14,37 @@ id(id), horasLab(horasLab), precioHora(precioHora), annosLaborados(annosLaborado
 Trabajador::~Trabajador() {
 }
 
-virtual float Trabajador::calcularSalarioBase() {
+float Trabajador::calcularSalarioBase() {
     return precioHora * 48;
 }
 
-virtual float Trabajador::calcularHorasExtra() {
+float Trabajador::calcularHorasExtra() {
     int contador = horasLab * 0.5;
     return horasLab + contador;
 }
 
-virtual float Trabajador::calcularAnualidades() {
+float Trabajador::calcularAnualidades() {
     return (calcularSalarioBase() * (0.05 * annosLaborados));
 }
 
-virtual float Trabajador::calcularSalariobruto() {
+float Trabajador::calcularSalariobruto() {
     return calcularSalarioBase() + calcularAnualidades() + (precioHora * calcularHorasExtra());
 }
 
-virtual float Trabajador::calcularCargas() {
+float Trabajador::calcularCargas() {
     return calcularSalariobruto() - (calcularSalariobruto() * 0.09);
 }
 
-virtual float Trabajador::calcularSalarioNeto() {
+float Trabajador::calcularSalarioNeto() {
     return calcularSalariobruto() - calcularCargas();
 }
 
-virtual std::string Trabajador::toString() {
+std::string Trabajador::toString() {
     std::string reporte = "";
     reporte = reporte + "Los datos del trabajador son: \n" + "Identificacion: " + id + "\n" +
             "Horas laboradas: " + std::to_string(getHorasLab()) + "\n" +
             "PrecioPorHora: " + std::to_string(getPrecioHora()) + "\n" +
-            "Annos Laborados: " std::to_string(getAnnosLaborados());
+            "Annos Laborados: " + std::to_string(getAnnosLaborados());
     return reporte;
 
 }

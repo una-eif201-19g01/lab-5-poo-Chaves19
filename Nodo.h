@@ -22,7 +22,7 @@ public:
 
     const Trabajador &getTrabajador() const;
 
-    void setLibro(const Trabajador &trabajador);
+    void setTrabajador(const Trabajador &trabajador);
 
     Nodo *getSiguiente() const;
 

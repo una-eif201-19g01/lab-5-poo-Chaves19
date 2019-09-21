@@ -8,8 +8,9 @@
 Secretaria::Secretaria() {
 }
 
-Secretaria::Secretaria( std::string id, int horasLab, float precioHora, int annosLaborados):
-Trabajador(id, horasLab, precioHora, annosLaborados) {}
+Secretaria::Secretaria(std::string id, int horasLab, float precioHora, int annosLaborados) :
+Trabajador(id, horasLab, precioHora, annosLaborados) {
+}
 
 Secretaria::~Secretaria() {
 }
@@ -41,5 +42,5 @@ float Secretaria::calcularSalarioNeto() {
 
 std::string Secretaria::toString() {
     std::string reporte = Trabajador::toString();
-    return reporte; 
+    return reporte;
 }

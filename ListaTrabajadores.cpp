@@ -19,7 +19,7 @@ ListaTrabajadores::~ListaTrabajadores() {
 }
 
 void ListaTrabajadores::insertarInicio(const Trabajador& _trabajador) {
-    actual = new Nodo (_trabajador, nullptr);
+    actual = new Nodo(_trabajador, nullptr);
     if (primero == nullptr) {
         primero = actual;
     } else {
@@ -56,7 +56,7 @@ int ListaTrabajadores::totalNodos() {
     actual = primero;
 
     while (actual != nullptr) {
-        totalNodos ++;
+        totalNodos++;
         actual = actual->getSiguiente();
     }
 
